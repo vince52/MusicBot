@@ -62,6 +62,7 @@ public class SkipCmd extends MusicCommand
                     .filter(m -> handler.getVotes().contains(m.getUser().getId())).count();
             int required = (int)Math.ceil(listeners * .55);
             msg+= skippers+" votes, "+required+"/"+listeners+" needed]`";
+            skippers = required + 1;
             if(skippers>=required)
             {
                 User u = event.getJDA().getUserById(handler.getRequester());
